@@ -1,0 +1,41 @@
+<h1>Examenes</h1>
+<hr>
+<div class="row animated fadeIn fast">
+    <div class="col-md-12">
+      <div class="table-responsive">
+          <table class="table">
+            <thead class="thead-inverse">
+              <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th class="text-center">Opciones</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let key of examenes | keys; let i = index">
+                  <th>{{ i + 1 }}</th>
+                  <td>{{ examenes[key].nombre }}</td>
+                  <td class="text-right w230">
+                      <button   [routerLink]="['/hematologias','informes']"
+                                class="btn btn-outline-primary"
+                                type="button" name="button">
+                          Informes
+                      </button>
+                  </td>
+                </tr>
+            </tbody>
+          </table>
+
+          <div  *ngIf="(examenes | keys).length === 0 && !loading"
+                class="alert alert-info" role="alert">
+              <strong>No hay</strong> registros que mostrar
+          </div>
+
+          <div *ngIf="loading"
+                class="alert alert-warning" role="alert">
+            <strong>Cargando...</strong> por favor espere
+          </div>
+
+      </div>
+    </div>
+</div>

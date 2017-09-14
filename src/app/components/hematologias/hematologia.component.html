@@ -1,0 +1,394 @@
+<h1 class="text-center"><strong>IPS UNIVERSITARIA ADVENTISTA</strong></h1>
+<ul class="list-unstyled text-center">
+  <li><em>"Comprometidos con jesucristo en su ministerio sanador"</em></li>
+  <li><em>Cra. 84 No. 33AA - 159 PBX: 250 64 88</em></li>
+  <li><em>Toma de muestras de laboratorio 6:30 a las 9:30 a.m.</em></li>
+</ul>
+
+<dl class="row">
+  <h5 class="col-sm-12 text-center"><strong>LABORATORIO CLINICO</strong></h5>
+  <dt class="col-sm-3">
+    <h5><strong><em>Nombre del paciente: </em></strong></h5>
+  </dt>
+  <dd class="col-sm-9">
+    <input  [(ngModel)]="paciente.nombre"
+          name="nombre"
+          type="text"
+          class="form-control"
+          placeholder="Nombre completo"
+          required>
+  </dd>
+
+  <dt class="col-xs-2">
+    <h5><strong><em>Documento: </em></strong></h5>
+  </dt>
+  <dd class="col-sm-3">
+    <input  [(ngModel)]="paciente.documento"
+          name="documento"
+          type="number"
+          required pattern="[0-9]{10}"
+          class="form-control"
+          placeholder="Numero de documento">
+  </dd>
+  <dt class="col-xs-1">
+    <h5><strong><em>Telefono: </em></strong></h5>
+  </dt>
+  <dd class="col-sm-3">
+    <input  [(ngModel)]="paciente.nombre"
+          name="telefono"
+          type="number"
+          class="form-control"
+          placeholder="Numero de telefono"
+          required>
+  </dd>
+  <dd class="col-sm-4"></dd>
+
+  <dt class="col-xs-1">
+    <h5><strong><em>Codigo: </em></strong></h5>
+  </dt>
+  <dd class="col-sm-2">
+    <input  [(ngModel)]="paciente.nombre"
+          name="Codigo"
+          type="number"
+          class="form-control"
+          placeholder="Codigo"
+          required>
+  </dd>
+  <dd class="col-sm-9"></dd>
+
+  <dt class="col-xs-2">
+    <h5><strong><em>Fecha de atención: </em></strong></h5>
+  </dt>
+  <dd class="col-sm-2">
+    <input  [(ngModel)]="paciente.nombre"
+          name="dateAtencion"
+          type="date"
+          class="form-control"
+          placeholder="Codigo"
+          required>
+  </dd>
+
+  <dt class="col-xs-2">
+    <h5><strong><em>Fecha de entrega: </em></strong></h5>
+  </dt>
+  <dd class="col-sm-2">
+    <input  [(ngModel)]="paciente.nombre"
+          name="dateEntrega"
+          type="date"
+          class="form-control"
+          placeholder="Codigo"
+          required>
+  </dd>
+</dl>
+
+    <ul class="list-unstyled text-center">
+      <li><h4><strong><em>Hematología</em></strong></h4></li>
+      <li><h4><strong><em>Extendido de Sangre Periferica</em></strong></h4></li>
+    </ul>
+    <hr>
+
+<h5><strong><em>Extendido de Sangre Periferica</em></strong></h5>
+<ul class="list-inline">
+  <li class="list-inline-item"><strong>SERIE ERITROCITARIA</strong></li>
+  <li class="list-inline-item">
+    <input  name="eritrocitaria"
+            type="text"
+            class="form-control"
+            required>
+  </li>
+</ul>
+
+<ul class="list-inline">
+  <li class="list-inline-item"><strong>SERIE LEUCOCITARIA</strong></li>
+  <li class="list-inline-item">
+    <input  name="leucocitaria"
+            type="text"
+            class="form-control"
+            required>
+  </li>
+  <li class="list-inline-item">en Numero y forma</li>
+</ul>
+
+<ul class="list-inline">
+  <li class="list-inline-item"><strong>SERIE PLAQUETARIA</strong></li>
+  <li class="list-inline-item">
+    <input  name="plaquetaria"
+            type="text"
+            class="form-control"
+            required>
+  </li>
+  <li class="list-inline-item">en Numero y forma</li>
+</ul>
+<hr>
+<h4 class="text-center"><strong><em>Formula Diferencial</em></strong></h4>
+<hr>
+  <h5><strong><em>Formula Diferencial Manual</em></strong></h5>
+  <br>
+
+<dl class="row">
+    <dt class="col-sm-6">
+    <ul class="list-inline">
+      <li class="list-inline-item text"><strong>Neutrofilos:</strong></li>
+      <li class="list-inline-item text">
+        <input  name="neutrofilos"
+                type="text"
+                class="form-control"
+                required>
+      </li>
+      <li class="list-inline-item text">%</li>
+    </ul>
+    </dt>
+    <dt class="col-sm-6 text-right">
+      <em>VN: 45 - 65%</em>
+    </dt>
+    <dt class="col-sm-6">
+      <ul class="list-inline">
+        <li class="list-inline-item"><strong>Linfocitos:</strong></li>
+        <li class="list-inline-item">
+          <input  name="linfocitos"
+                  type="text"
+                  class="form-control"
+                  required>
+        </li>
+        <li class="list-inline-item">%</li>
+      </ul>
+    </dt>
+    <dt class="col-sm-6 text-right">
+      <em>VN: 30 - 40%</em>
+    </dt>
+    <dt class="col-sm-6">
+      <ul class="list-inline">
+        <li class="list-inline-item"><strong>Eosinofilos:</strong></li>
+        <li class="list-inline-item">
+          <input  name="eosinofilos"
+                  type="text"
+                  class="form-control"
+                  required>
+        </li>
+        <li class="list-inline-item">%</li>
+      </ul>
+    </dt>
+    <dt class="col-sm-6 text-right">
+      <em>VN: 1 - 5%</em>
+    </dt>
+    <dt class="col-sm-6">
+      <ul class="list-inline">
+        <li class="list-inline-item"><strong>Monocitos:</strong></li>
+        <li class="list-inline-item">
+          <input  name="monocitos"
+                  type="text"
+                  class="form-control"
+                  required>
+        </li>
+        <li class="list-inline-item">%</li>
+      </ul>
+    </dt>
+    <dt class="col-sm-6 text-right">
+      <em>VN: 3 - 8%</em>
+    </dt>
+    <dt class="col-sm-6">
+      <ul class="list-inline">
+        <li class="list-inline-item"><strong>Basofilos:</strong></li>
+        <li class="list-inline-item">
+          <input  name="basofilos"
+                  type="text"
+                  class="form-control"
+                  required>
+        </li>
+        <li class="list-inline-item">%</li>
+      </ul>
+    </dt>
+    <dt class="col-sm-6 text-right">
+      <em>VN: 0 - 2%</em>
+    </dt>
+</dl>
+<hr>
+<h4 class="text-center"><strong><em>Gota Gruesa</em></strong></h4>
+<hr>
+  <h5><strong><em>Gota Gruesa</em></strong></h5>
+  <br>
+  <ul class="list-inline">
+    <li class="list-inline-item">
+      <select class="form-control" name="">
+        <option value="Positivo">Positivo</option>
+        <option value="Negativo">Negativo</option>
+      </select>
+    </li>
+    <li class="list-inline-item"><strong>para Plasmodium  sp</strong></li>
+  </ul>
+<hr>
+
+  <h4 class="text-center"><strong><em>Hematologia</em></strong></h4>
+  <hr>
+<dl class="row">
+  <dt class="col-sm-6">
+      <ul class="list-inline">
+        <li class="list-inline-item"><strong>Hemoglobina</strong></li>
+        <li class="list-inline-item">
+          <input  name="hemoglobina"
+                  type="text"
+                  class="form-control"
+                  required>
+        </li>
+        <li class="list-inline-item"><strong>gr/dl</strong></li>
+      </ul>
+  </dt>
+  <dt class="col-sm-6 text-right">
+    <em>VN: <strong>M:</strong> 13 - 15 <strong>H:</strong> 14 - 17 gr/dl</em>
+  </dt>
+  <dt class="col-sm-6">
+      <ul class="list-inline">
+        <li class="list-inline-item"><strong>Hematocrito</strong></li>
+        <li class="list-inline-item">
+          <input  name="hematocrito"
+                  type="text"
+                  class="form-control"
+                  required>
+        </li>
+        <li class="list-inline-item"><strong>%</strong></li>
+      </ul>
+  </dt>
+  <dt class="col-sm-6 text-right">
+    <em>VN: <strong>M:</strong> 38 - 46 <strong>H:</strong> 42 - 48 %</em>
+  </dt>
+</dl>
+<hr>
+<h4 class="text-center"><strong><em>Hematologia</em></strong></h4>
+<hr>
+<dl class="row">
+  <dt class="col-sm-6">
+      <ul class="list-inline">
+        <li class="list-inline-item"><strong>Recuento de Plaquetas</strong></li>
+        <li class="list-inline-item">
+          <input  name="plaquetas"
+                  type="text"
+                  class="form-control"
+                  required>
+        </li>
+        <li class="list-inline-item"><strong>x10*3/L</strong></li>
+      </ul>
+  </dt>
+  <dt class="col-sm-6 text-right">
+    <em>VN: 150 - 450 x10*3/L</em>
+  </dt>
+</dl>
+<hr>
+
+<h4 class="text-center"><strong><em>Hematologia</em></strong></h4>
+<hr>
+<dl class="row">
+  <dt class="col-sm-6">
+      <ul class="list-inline">
+        <li class="list-inline-item"><strong>Recuento de Reticulocitos: </strong></li>
+        <li class="list-inline-item">
+          <input  name="plaquetas"
+                  type="text"
+                  class="form-control"
+                  required>
+        </li>
+        <li class="list-inline-item"><strong>%</strong></li>
+      </ul>
+      <p><em><strong>Metodo:</strong> tinción Azul brillante de Cresilo</em></p>
+  </dt>
+  <dt class="col-sm-6 text-right">
+    <em><strong>Muestra:</strong> Sangre Total</em>
+    <p><em><strong>VN:</strong> 0.5 - 1.5 %</em></p>
+  </dt>
+</dl>
+<hr>
+
+<h4 class="text-center"><strong><em>Tiempo de Sangría</em></strong></h4>
+<hr>
+<dl class="row">
+  <dt class="col-sm-7">
+      <ul class="list-inline">
+        <li class="list-inline-item">Tiempo de sangria: </li>
+        <li class="list-inline-item">
+          <input  name="minutoSangria"
+                  type="number"
+                  class="form-control">
+        </li>
+        <li class="list-inline-item"> minutos, </li>
+        <li class="list-inline-item">
+          <input  name="segundoSangria"
+                  type="number"
+                  class="form-control">
+        </li>
+        <li class="list-inline-item"> segundos</li>
+      </ul>
+  </dt>
+  <dt class="col-sm-5 text-right">
+    <em><strong>Muestra:</strong> Punción dérmica</em>
+    <p><em><strong>VN:</strong> 2 - 5 Minutos</em></p>
+  </dt>
+</dl>
+<hr>
+
+  <h4 class="text-center"><strong><em>Tiempo de coagulacion</em></strong></h4>
+<hr>
+  <dl class="row">
+    <dt class="col-sm-8">
+        <ul class="list-inline">
+          <li class="list-inline-item">Tiempo de coagulacion: </li>
+          <li class="list-inline-item">
+            <input  name="minutoCoagulacion"
+                    type="number"
+                    class="form-control">
+          </li>
+          <li class="list-inline-item"> minutos, </li>
+          <li class="list-inline-item">
+            <input  name="segundoCoagulacion"
+                    type="number"
+                    class="form-control">
+          </li>
+          <li class="list-inline-item"> segundos</li>
+        </ul>
+    </dt>
+    <dt class="col-sm-4 text-right">
+      <em><strong>VN:</strong> 4 - 10 Minutos</em>
+    </dt>
+  </dl>
+<hr>
+
+<h4 class="text-center"><strong><em>Hematologia</em></strong></h4>
+<hr>
+  <ul class="list-inline">
+    <li class="list-inline-item"><h5><strong><em>SICKLEMIA</em></strong></h5></li>
+    <li class="list-inline-item">
+      <select class="form-control" name="">
+        <option value="Positivo">Positivo</option>
+        <option value="Negativo">Negativo</option>
+      </select>
+    </li>
+  </ul>
+<hr>
+
+<h4 class="text-center"><strong><em>Hematologia</em></strong></h4>
+<hr>
+  <dl class="row">
+      <dt class="col-sm-6">
+        <ul class="list-inline">
+          <li class="list-inline-item"><h5><strong><em>ERITROSEDIMENTACION</em></strong></h5></li>
+          <li class="list-inline-item">
+            <input  name="eritrosedimentacion"
+                    type="number"
+                    class="form-control">
+          </li>
+          <li class="list-inline-item"> mm/h</li>
+        </ul>
+      </dt>
+      <dt class="col-sm-6 text-right">
+        <em><strong>VN:</strong> 20 mm/h</em>
+      </dt>
+  </dl>
+<hr>
+
+<br>
+<br>
+<dl class="row">
+    <dt class="col-sm-12 text-center">
+          <em class="text-center"><strong>"Hijo mío, no te olvides de mi ley, Y tu corazón guarde mis mandamientos; porque largura de dias
+            y años de vida y paz te aumentarán"</strong></em>
+            <p><em class="text-center"><strong>Proverbios 3: 1-2</strong></em></p>
+    </dt>
+</dl>

@@ -1,0 +1,62 @@
+<h1>Hematologias</h1>
+<hr>
+<div class="row">
+  <div class="col-md-12 text-right">
+      <button   [routerLink]="['/hematologia','nuevo']"
+                class="btn btn-outline-primary"
+                type="button" name="button">
+          Nuevo informe
+      </button>
+  </div>
+</div>
+<br>
+
+<div class="row animated fadeIn fast">
+    <div class="col-md-12">
+      <div class="table-responsive">
+          <table class="table">
+            <thead class="thead-inverse">
+              <tr>
+                <th>#</th>
+                <th>Codigo</th>
+                <th>Fecha de atencion</th>
+                <th>fecha de entrega</th>
+                <th>Paciente</th>
+                <th>Documento</th>
+                <th class="text-center">Opciones</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let key of pacientes | keys; let i = index">
+                  <th>{{ i + 1 }}</th>
+                  <td>{{ pacientes[key].nombre }}</td>
+                  <td>{{ pacientes[key].documento }}</td>
+                  <td>{{ pacientes[key].telefono }}</td>
+                  <td class="text-right w230">
+                      <button [routerLink]="['/paciente', key]"
+                              type="button" class="btn btn-outline-success">
+                          Editar
+                      </button>
+                      <button (click) = "borrarPaciente(key)"
+                              [routerLink]="['/pacientes']"
+                              type="button" class="btn btn-outline-danger">
+                          Eliminar
+                      </button>
+                  </td>
+                </tr>
+            </tbody>
+          </table>
+
+          <div  *ngIf="(pacientes | keys).length === 0 && !loading"
+                class="alert alert-info" role="alert">
+              <strong>No hay</strong> registros que mostrar
+          </div>
+
+          <div *ngIf="loading"
+                class="alert alert-warning" role="alert">
+            <strong>Cargando...</strong> por favor espere
+          </div>
+
+      </div>
+    </div>
+</div>

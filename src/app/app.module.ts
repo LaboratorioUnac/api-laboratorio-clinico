@@ -13,7 +13,6 @@ import { LaboratorioComponent } from './components/laboratorio/laboratorio.compo
 import { HeaderTopComponent } from './components/header-top/header-top.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
-import { ExamenesComponent } from './components/examenes/examenes.component';
 import { PacientesComponent } from './components/pacientes/pacientes.component';
 import { PacienteComponent } from './components/pacientes/paciente.component';
 
@@ -21,7 +20,7 @@ import { PacienteComponent } from './components/pacientes/paciente.component';
 import { AuthService }  from "./services/auth.service";
 import { AuthGuardService } from './services/auth-guard.service';
 import { PacientesService } from './services/pacientes.service';
-import { ExamenesService } from './services/examenes.service';
+import { HematologiasService } from './services/hematologias.service';
 
 //pipes
 import { KeysPipe } from './pipes/keys.pipe';
@@ -39,7 +38,6 @@ import { HematologiaComponent } from './components/hematologias/hematologia.comp
     HeaderTopComponent,
     MenuComponent,
     PerfilComponent,
-    ExamenesComponent,
     PacientesComponent,
     PacienteComponent,
     KeysPipe,
@@ -57,7 +55,7 @@ import { HematologiaComponent } from './components/hematologias/hematologia.comp
     AuthService,
     AuthGuardService,
     PacientesService,
-    ExamenesService
+    HematologiasService
   ],
   bootstrap: [AppComponent]
 })

@@ -6,7 +6,6 @@ import {HomeComponent} from './components/home/home.component';
 import {LaboratorioComponent} from './components/laboratorio/laboratorio.component';
 import {MenuComponent} from './components/menu/menu.component';
 import {PerfilComponent} from './components/perfil/perfil.component';
-import {ExamenesComponent} from './components/examenes/examenes.component';
 import {PacientesComponent} from './components/pacientes/pacientes.component';
 import {PacienteComponent} from './components/pacientes/paciente.component';
 import {HematologiasComponent} from './components/hematologias/hematologias.component';
@@ -28,12 +27,6 @@ const APP_ROUTES: Routes = [
      component: PerfilComponent,
      canActivate: [ AuthGuardService ]
     },
-    {
-      path: 'examenes',
-      component: ExamenesComponent,
-      canActivate: [ AuthGuardService ]
-     },
-
       {
         path: 'pacientes',
         component: PacientesComponent,

@@ -35,9 +35,9 @@
                               type="button" class="btn btn-outline-success">
                           Editar
                       </button>
-                      <button data-toggle="modal" data-target="#modalEliminarPaciente"
-                              type="button" class="btn btn-outline-danger" form="key">
-                                Eliminar
+                      <button type="button" class="btn btn-outline-danger" (click) = "borrarPaciente(key)"
+                              [routerLink]="['/pacientes']"  data-dismiss="modal">
+                            Eliminar
                       </button>
                   </td>
                 </tr>
@@ -56,29 +56,3 @@
       </div>
     </div>
 </div>
-<tr *ngFor="let key of pacientes | keys; let i = index">
-  <div class="modal fade" id="modalEliminarPaciente" tabindex="-1" role="dialog" aria-labelledby="modalEliminarPacienteLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalEliminarPacienteLabel">Eliminar paciente</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div  class="">
-            Esta seguro de querer eliminar a {{pacientes[key].nombre }}
-          </div>
-        </div>
-        <div class="modal-footer">
-            <td class="text-right w230">
-              <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn btn-outline-danger" (click) = "borrarPaciente(key)"
-                      [routerLink]="['/pacientes']"  data-dismiss="modal">Confirmar</button>
-            </td>
-        </div>
-      </div>
-    </div>
-  </div>
-</tr>

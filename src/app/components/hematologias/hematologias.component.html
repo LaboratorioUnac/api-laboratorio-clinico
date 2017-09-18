@@ -27,18 +27,20 @@
               </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let key of pacientes | keys; let i = index">
+                <tr *ngFor="let key of hematologias | keys; let i = index">
                   <th>{{ i + 1 }}</th>
-                  <td>{{ pacientes[key].nombre }}</td>
-                  <td>{{ pacientes[key].documento }}</td>
-                  <td>{{ pacientes[key].telefono }}</td>
+                  <td>{{ hematologias[key].codigo }}</td>
+                  <td>{{ hematologias[key].atencion }}</td>
+                  <td>{{ hematologias[key].entrega }}</td>
+                  <td>{{ hematologias[key].nombre }}</td>
+                  <td>{{ hematologias[key].documento }}</td>
                   <td class="text-right w230">
-                      <button [routerLink]="['/paciente', key]"
+                      <button [routerLink]="['/hematologia', key]"
                               type="button" class="btn btn-outline-success">
                           Editar
                       </button>
                       <button (click) = "borrarPaciente(key)"
-                              [routerLink]="['/pacientes']"
+                              [routerLink]="['/hematologias','informes']"
                               type="button" class="btn btn-outline-danger">
                           Eliminar
                       </button>
@@ -47,7 +49,7 @@
             </tbody>
           </table>
 
-          <div  *ngIf="(pacientes | keys).length === 0 && !loading"
+          <div  *ngIf="(hematologias | keys).length === 0 && !loading"
                 class="alert alert-info" role="alert">
               <strong>No hay</strong> registros que mostrar
           </div>

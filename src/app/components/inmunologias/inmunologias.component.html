@@ -1,8 +1,8 @@
-<h1>Hematologias</h1>
+<h1>Inmunologias</h1>
 <hr>
 <div class="row">
   <div class="col-md-12 text-right">
-      <button   [routerLink]="['/hematologia','nuevo']"
+      <button   [routerLink]="['/inmunologia','nuevo']"
                 class="btn btn-outline-primary"
                 type="button" name="button">
           Nuevo informe
@@ -27,20 +27,20 @@
               </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let key of hematologias | keys; let i = index">
+                <tr *ngFor="let key of inmunologias | keys; let i = index">
                   <th>{{ i + 1 }}</th>
-                  <td>{{ hematologias[key].codigo }}</td>
-                  <td>{{ hematologias[key].atencion }}</td>
-                  <td>{{ hematologias[key].entrega }}</td>
-                  <td>{{ hematologias[key].nombre }}</td>
-                  <td>{{ hematologias[key].documento }}</td>
+                  <td>{{ inmunologias[key].codigo }}</td>
+                  <td>{{ inmunologias[key].atencion }}</td>
+                  <td>{{ inmunologias[key].entrega }}</td>
+                  <td>{{ inmunologias[key].nombre }}</td>
+                  <td>{{ inmunologias[key].documento }}</td>
                   <td class="text-right w230">
-                      <button [routerLink]="['/hematologia', key]"
+                      <button [routerLink]="['/inmunologia', key]"
                               type="button" class="btn btn-outline-success">
                           Editar
                       </button>
-                      <button (click) = "borrarHematologia(key)"
-                              [routerLink]="['/hematologias','informes']"
+                      <button (click) = "borrarInmunologia(key)"
+                              [routerLink]="['/inmunologias','informes']"
                               type="button" class="btn btn-outline-danger">
                           Eliminar
                       </button>
@@ -49,7 +49,7 @@
             </tbody>
           </table>
 
-          <div  *ngIf="(hematologias | keys).length === 0 && !loading"
+          <div  *ngIf="(inmunologias | keys).length === 0 && !loading"
                 class="alert alert-info" role="alert">
               <strong>No hay</strong> registros que mostrar
           </div>

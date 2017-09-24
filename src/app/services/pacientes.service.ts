@@ -6,8 +6,8 @@ import 'rxjs/Rx';
 @Injectable()
 export class PacientesService {
 
-pacientesURL:string="https://laboratorioapp-2017.firebaseio.com/pacientes.json";
-pacienteURL:string="https://laboratorioapp-2017.firebaseio.com/pacientes/";
+pacientesURL:string="https://laboratorioclinico-eps.firebaseio.com/pacientes.json";
+pacienteURL:string="https://laboratorioclinico-eps.firebaseio.com/pacientes/";
 
   constructor( private http:Http ) { }
 

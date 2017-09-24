@@ -6,8 +6,8 @@ import 'rxjs/Rx';
 @Injectable()
 export class HematologiasService {
 
-hematologiasURL:string ="https://laboratorioapp-2017.firebaseio.com/hematologias.json";
-hematologiaURL:string="https://laboratorioapp-2017.firebaseio.com/hematologias/";
+hematologiasURL:string ="https://laboratorioclinico-eps.firebaseio.com/hematologias.json";
+hematologiaURL:string="https://laboratorioclinico-eps.firebaseio.com/hematologias/";
   constructor( private http:Http ) {}
 
       nuevaHematologia( hematologia:Hematologia ){

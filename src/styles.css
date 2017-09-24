@@ -1,3 +1,8 @@
+.skip-navigation {
+  @include sr-only;
+  @include sr-only-focusable;
+}
+
 hr{
   border: 2px solid #736D6D;
 }

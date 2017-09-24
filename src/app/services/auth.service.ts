@@ -11,12 +11,12 @@ export class AuthService {
 public userProfile:any;
 
   auth0 = new auth0.WebAuth({
-    clientID: 'jATOUYWNq96gkGpkzqiTawPxA63FLys5',
-    domain: 'sneiidergil.auth0.com',
+    clientID: 'xNvdSOF7X0hMQzn4CS202IHL8TeRiQk9',
+    domain: 'laboratoriounac.auth0.com',
     responseType: 'token id_token',
-    audience: 'https://sneiidergil.auth0.com/userinfo',
+    audience: 'https://laboratoriounac.auth0.com/userinfo',
     redirectUri: 'http://localhost:4200/callback',
-    scope: 'openid profile'
+    scope: 'openid'
   });
 
   constructor(public router: Router) {}

@@ -1,0 +1,556 @@
+<div class="sticky-top">
+  <button [routerLink]="['/inmunologias','informes']"
+        class="btn btn-outline-danger ">
+    Inmunologias
+  </button>
+  <button   (click)="agregarNuevo(forma)"
+            type="button" class="btn btn-outline-success">
+    Nueva Inmunologia
+  </button>
+  <hr>
+</div>
+
+
+<h1 class="text-center"><strong>IPS UNIVERSITARIA ADVENTISTA</strong></h1>
+  <ul class="list-unstyled text-center">
+    <li><em>"Comprometidos con jesucristo en su ministerio sanador"</em></li>
+    <li><em>Cra. 84 No. 33AA - 159 PBX: 250 64 88</em></li>
+    <li><em>Toma de muestras de laboratorio 6:30 a las 9:30 a.m.</em></li>
+  </ul>
+<div class="row animated fadeIn fast">
+  <div class="col-md-12">
+
+  <form (ngSubmit)="guardar()" #forma="ngForm">
+
+    <dl class="row">
+      <h5 class="col-sm-12 text-center"><strong>LABORATORIO CLINICO</strong></h5>
+      <dt class="col-sm-3">
+        <h5><strong><em>Nombre del paciente: </em></strong></h5>
+      </dt>
+      <dd class="col-sm-9">
+        <input  [(ngModel)]="inmunologia.nombre"
+              name="nombre"
+              type="text"
+              class="form-control"
+              placeholder="Nombre completo"
+              required>
+      </dd>
+
+      <dt class="col-xs-2">
+        <h5><strong><em>Documento: </em></strong></h5>
+      </dt>
+      <dd class="col-sm-3">
+        <input  [(ngModel)]="inmunologia.documento"
+              name="documento"
+              type="number"
+              class="form-control"
+              placeholder="Numero de documento">
+      </dd>
+      <dt class="col-xs-1">
+        <h5><strong><em>Telefono: </em></strong></h5>
+      </dt>
+      <dd class="col-sm-3">
+        <input  [(ngModel)]="inmunologia.telefono"
+              name="telefono"
+              type="number"
+              class="form-control"
+              placeholder="Numero de telefono"
+              required>
+      </dd>
+      <dd class="col-sm-4"></dd>
+
+      <dt class="col-xs-1">
+        <h5><strong><em>Codigo: </em></strong></h5>
+      </dt>
+      <dd class="col-sm-2">
+        <input  [(ngModel)]="inmunologia.codigo"
+              name="Codigo"
+              type="number"
+              class="form-control"
+              placeholder="Codigo"
+              required>
+      </dd>
+      <dd class="col-sm-9"></dd>
+
+      <dt class="col-xs-2">
+        <h5><strong><em>Fecha de atención: </em></strong></h5>
+      </dt>
+      <dd class="col-sm-2">
+        <input  [(ngModel)]="inmunologia.atencion"
+              name="atencion"
+              type="date"
+              class="form-control"
+              required>
+      </dd>
+
+      <dt class="col-xs-2">
+        <h5><strong><em>Fecha de entrega: </em></strong></h5>
+      </dt>
+      <dd class="col-sm-2">
+        <input  [(ngModel)]="inmunologia.entrega"
+              name="entrega"
+              type="date"
+              class="form-control"
+              required>
+      </dd>
+    </dl>
+    <ul class="list-unstyled text-center">
+      <li><h4><strong><em>Inmunologia</em></strong></h4></li>
+      <br>
+      <li><h4><strong><em>Factor Reumatoideo</em></strong></h4></li>
+    </ul>
+    <hr>
+        <dl class="row">
+            <dt class="col-sm-6">
+              <ul class="list-inline">
+                <li class="list-inline-item"><strong>Factor Reumatoideo</strong></li>
+                <
+                <li class="list-inline-item">
+                  <input  [(ngModel)]="inmunologia.reumatoideo"
+                          name="reumatoideo"
+                          type="number"
+                          class="form-control">
+                </li>
+                UI/ml
+              </ul>
+            </dt>
+            <dt class="col-sm-6 text-right">
+              <p><strong>V.N:</strong> < 8 UI/m</p>
+              <p><strong>Técnica:</strong> Latex</p>
+            </dt>
+          </dl>
+          <hr>
+          <br>
+          <ul class="list-unstyled text-center">
+            <li><h4><strong><em>Proteína C Reactiva</em></strong></h4></li>
+          </ul>
+          <hr>
+          <dl class="row">
+              <dt class="col-sm-6">
+                <ul class="list-inline">
+                  <li class="list-inline-item"><strong>Proteína C Reactiva</strong></li>
+                  <
+                  <li class="list-inline-item">
+                    <input  [(ngModel)]="inmunologia.proteinac"
+                            name="proteinac"
+                            type="number"
+                            class="form-control">
+                  </li>
+                  mg/L
+                </ul>
+                <ul class="list-inline">
+                  <strong>Técnica:</strong> Látex cuantitativo
+                </ul>
+              </dt>
+              <dt class="col-sm-6 text-right">
+                <p><strong>V.N:</strong> < 6mg/L</p>
+              </dt>
+            </dl>
+            <hr>
+            <br>
+            <ul class="list-unstyled text-center">
+              <li><h4><strong><em>DENGUE ANTICUERPOS IGG-IGM</em></strong></h4></li>
+            </ul>
+            <hr>
+            <dl class="row">
+              <dt class="col-sm-6">
+                <ul class="list-inline">
+                  <li class="list-inline-item"><strong>Dengue Ig G:</strong></li>
+                  <li class="list-inline-item">
+                    <select   [(ngModel)]="inmunologia.dengueg"
+                              class="form-control" name="dengueg">
+                      <option value="Positivo">Positivo</option>
+                      <option value="Negativo">Negativo</option>
+                    </select>
+                  </li>
+                </ul>
+                <ul class="list-inline">
+                  <li class="list-inline-item"><strong>Dengue Ig M:</strong></li>
+                  <li class="list-inline-item">
+                    <select   [(ngModel)]="inmunologia.denguem"
+                              class="form-control" name="denguem">
+                      <option value="Positivo">Positivo</option>
+                      <option value="Negativo">Negativo</option>
+                    </select>
+                  </li>
+                </ul>
+              </dt>
+              <dt class="col-sm-6 text-right">
+                <strong>Técnica:</strong> Prueba rápida inmunoensayo
+              </dt>
+            </dl>
+            <hr>
+            <br>
+            <ul class="list-unstyled text-center">
+              <li><h4><strong><em>Antígeno de Superficie para Hepatitis B (HBs Ag)</em></strong></h4></li>
+            </ul>
+            <hr>
+            <dl class="row">
+              <dt class="col-sm-6">
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <strong>HBs Ag:</strong>
+                  </li>
+                  <li class="list-inline-item">
+                    <select   [(ngModel)]="inmunologia.hbs"
+                              class="form-control" name="hbs">
+                      <option value="Positivo">Positivo</option>
+                      <option value="Negativo">Negativo</option>
+                    </select>
+                  </li>
+                </ul>
+              </dt>
+              <dt class="col-sm-6 text-right">
+                <strong>Técnica:</strong> Cromatografia
+              </dt>
+            </dl>
+            <hr>
+            <br>
+            <ul class="list-unstyled text-center">
+              <li><h4><strong><em>Anticuerpo G, Hepatitis C (HVC)</em></strong></h4></li>
+            </ul>
+            <hr>
+            <dl class="row">
+              <dt class="col-sm-6">
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <strong>HVC Ac:</strong>
+                  </li>
+                  <li class="list-inline-item">
+                    <select   [(ngModel)]="inmunologia.hvc"
+                              class="form-control" name="hvc">
+                      <option value="Positivo">Positivo</option>
+                      <option value="Negativo">Negativo</option>
+                    </select>
+                  </li>
+                </ul>
+              </dt>
+              <dt class="col-sm-6 text-right">
+                <strong>Técnica:</strong> Inmunocromatografia
+              </dt>
+            </dl>
+            <hr>
+            <br>
+            <ul class="list-unstyled text-center">
+              <li><h4><strong><em>Serología</em></strong></h4></li>
+            </ul>
+            <hr>
+            <dl class="row">
+              <dt class="col-sm-12">
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    Serología (V.D.R.L.):
+                  </li>
+                  <li class="list-inline-item">
+                    <select   [(ngModel)]="inmunologia.serologia"
+                              class="form-control" name="serologia">
+                      <option value="No Reactiva">No Reactiva</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="4">4</option>
+                      <option value="8">8</option>
+                      <option value="16">16</option>
+                      <option value="32">32</option>
+                      <option value="64">64</option>
+                      <option value="128">128</option>
+                      <option value="256">256</option>
+                      <option value="512">512</option>
+                      <option value="1024">1024</option>
+                    </select>
+                  </li>
+                </ul>
+              </dt>
+            </dl>
+            <hr>
+            <br>
+            <ul class="list-unstyled text-center">
+              <li><h4><strong><em>VIH</em></strong></h4></li>
+            </ul>
+            <hr>
+            <dl class="row">
+              <dt class="col-sm-12">
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <strong>TÉCNICA: </strong>
+                  </li>
+                  <li class="list-inline-item">
+                    Inmunocromatografia
+                  </li>
+                </ul>
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <strong>VIH 1:</strong>
+                  </li>
+                  <li class="list-inline-item">
+                    <select   [(ngModel)]="inmunologia.vih1"
+                              class="form-control" name="vih1">
+                      <option value="Positivo">Positivo</option>
+                      <option value="Negativo">Negativo</option>
+                    </select>
+                  </li>
+                </ul>
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <strong>VIH 2:</strong>
+                  </li>
+                  <li class="list-inline-item">
+                    <select   [(ngModel)]="inmunologia.vih2"
+                              class="form-control" name="vih2">
+                      <option value="Positivo">Positivo</option>
+                      <option value="Negativo">Negativo</option>
+                    </select>
+                  </li>
+                </ul>
+              </dt>
+            </dl>
+            <hr>
+            <br>
+            <ul class="list-unstyled text-center">
+              <li><h4><strong><em>ANTIGENO ESPECIFICO DE PROSTATA [PSA]</em></strong></h4></li>
+            </ul>
+            <hr>
+            <dl class="row">
+              <dt class="col-sm-6">
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <strong>PSA: </strong>
+                  </li>
+                  <li class="list-inline-item">
+                    <select   [(ngModel)]="inmunologia.psa"
+                              class="form-control" name="psa">
+                      <option value="Menor">Menor</option>
+                      <option value="Mayor">Mayor</option>
+                    </select>
+                  </li>
+                  <strong> de 4 ng/ml</strong>
+                </ul>
+                <ul class="list-inline">
+                  <strong>Método: </strong>Inmunocromatográfico semi-cuantitativa
+                </ul>
+              </dt>
+              <dt class="col-sm-6 text-right">
+                <ul class="list-inline">
+                  <strong>VN: 0-4 ng/ml =</strong> Negativo
+                </ul>
+              </dt>
+            </dl>
+            <hr>
+            <br>
+            <ul class="list-unstyled text-center">
+              <li><h4><strong><em>TOXOPLASMA GONDII</em></strong></h4></li>
+            </ul>
+            <hr>
+            <dl class="row">
+              <dt class="col-sm-6">
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <strong>Toxoplasma Ig G: </strong>
+                  </li>
+                  <li class="list-inline-item">
+                    <select   [(ngModel)]="inmunologia.toxoplasmag"
+                              class="form-control" name="toxoplasmag">
+                      <option value="Negativo">Negativo</option>
+                      <option value="Positivo">Positivo</option>
+                    </select>
+                  </li>
+                </ul>
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <strong>Toxoplasma Ig M: </strong>
+                  </li>
+                  <li class="list-inline-item">
+                    <select   [(ngModel)]="inmunologia.toxoplasmam"
+                              class="form-control" name="toxoplasmam">
+                      <option value="Negativo">Negativo</option>
+                      <option value="Positivo">Positivo</option>
+                    </select>
+                  </li>
+                </ul>
+              </dt>
+              <dt class="col-sm-6 text-right">
+                <ul class="list-inline">
+                  <strong>Técnica: </strong> Toxolatex
+                </ul>
+                <ul class="list-inline">
+                  <strong>Técnica: </strong> Toxolatex
+                </ul>
+              </dt>
+            </dl>
+            <hr>
+            <br>
+            <ul class="list-unstyled text-center">
+              <li><h4><strong><em>Coombs indirecto</em></strong></h4></li>
+            </ul>
+            <hr>
+            <dl class="row">
+              <dt class="col-sm-6">
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <strong>COOMBS INDIRECTO: </strong>
+                  </li>
+                  <li class="list-inline-item">
+                    <select   [(ngModel)]="inmunologia.coombs"
+                              class="form-control" name="coombs">
+                      <option value="Negativo">Negativo</option>
+                      <option value="Positivo">Positivo</option>
+                    </select>
+                  </li>
+                </ul>
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <strong>Técnica: </strong>
+                  </li>
+                  <li class="list-inline-item">
+                    Aglutinación in Vitro
+                  </li>
+                </ul>
+              </dt>
+              <dt class="col-sm-6 text-right">
+                <ul class="list-inline">
+                  <strong>Tipo de Muestra: </strong> Suero
+                </ul>
+
+              </dt>
+            </dl>
+            <hr>
+            <br>
+            <ul class="list-unstyled text-center">
+              <li><h4><strong><em>Prueba Inmunológica de Embarazo</em></strong></h4></li>
+            </ul>
+            <hr>
+            <dl class="row">
+              <dt class="col-sm-12">
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <strong>Prueba Inmunológica de Embarazo (Pie): </strong>
+                  </li>
+                  <li class="list-inline-item">
+                    <select   [(ngModel)]="inmunologia.embarazo"
+                              class="form-control" name="embarazo">
+                      <option value="Negativo">Negativo</option>
+                      <option value="Positivo">Positivo</option>
+                    </select>
+                  </li>
+                </ul>
+              </dt>
+            </dl>
+            <hr>
+            <br>
+            <ul class="list-unstyled text-center">
+              <li><h4><strong><em>Hemoclasificación</em></strong></h4></li>
+            </ul>
+            <hr>
+            <dl class="row">
+              <dt class="col-sm-6">
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <strong>Grupo Sanguíneo: </strong>
+                  </li>
+                  <li class="list-inline-item">
+                    <select   [(ngModel)]="inmunologia.grupo"
+                              class="form-control" name="grupo">
+                      <option value="A">A</option>
+                      <option value="B">B</option>
+                      <option value="AB">AB</option>
+                      <option value="O">O</option>
+                    </select>
+                  </li>
+                </ul>
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <strong>RH: </strong>
+                  </li>
+                  <li class="list-inline-item">
+                    <select   [(ngModel)]="inmunologia.rh"
+                              class="form-control" name="rh">
+                      <option value="Negativa">Negativo</option>
+                      <option value="Positiva">Positivo</option>
+                    </select>
+                  </li>
+                </ul>
+              </dt>
+              <dt class="col-sm-6 text-right">
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <strong>Muestra: </strong> Sangre Total
+                  </li>
+                </ul>
+              </dt>
+            </dl>
+            <hr>
+            <br>
+            <ul class="list-unstyled text-center">
+              <li><h4><strong><em>Proteína C Reactiva</em></strong></h4></li>
+            </ul>
+            <hr>
+            <dl class="row">
+              <dt class="col-sm-6">
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <strong>Proteína C Reactiva: </strong>
+                  </li>
+                  <li class="list-inline-item">
+                    <select   [(ngModel)]="inmunologia.proteinac2"
+                              class="form-control" name="proteinac2">
+                      <option value="6">6</option>
+                      <option value="12">12</option>
+                      <option value="24">24</option>
+                      <option value="48">48</option>
+                      <option value="96">96</option>
+                      <option value="192">192</option>
+                      <option value="384">384</option>
+                    </select>
+                  </li>
+                  mg/L
+                </ul>
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <strong>Técnica: </strong>
+                  </li>
+                  <li class="list-inline-item">
+                    <select   [(ngModel)]="hematologia.tecnica"
+                              class="form-control" name="tecnica">
+                      <option value="Látex cuantitativo">Látex cuantitativo</option>
+                      <option value="Otro">Otro</option>
+                    </select>
+                  </li>
+                </ul>
+              </dt>
+              <dt class="col-sm-6 text-right">
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+                    <strong>V.N: </strong> < 6mg/L
+                  </li>
+                </ul>
+              </dt>
+            </dl>
+            <hr>
+            <dl class="row">
+                <dt class="col-sm-12 text-center">
+                      <em class="text-center"><strong>"Hijo mío, no te olvides de mi ley, Y tu corazón guarde mis mandamientos; porque largura de dias
+                        y años de vida y paz te aumentarán"</strong></em>
+                        <p><em class="text-center"><strong>Proverbios 3: 1-2</strong></em></p>
+                </dt>
+            </dl>
+            <dl class="row">
+                <dt class="col-sm-12 text-center">
+                  <button   [disabled]="!forma.valid"
+                            type="submit" class="btn btn-outline-primary">
+                    Guardar cambios
+                  </button>
+                </dt>
+            </dl>
+        </form>
+      </div>
+    </div>
+    <div  *ngIf="actualizado"
+          class="alert alert-info alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>¡Informe actualizado!</strong>
+    </div>
+
+    <div  *ngIf="ingresado"
+          class="alert alert-info alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>¡Informe ingresado con exito!</strong>
+    </div>

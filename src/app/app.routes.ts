@@ -10,6 +10,8 @@ import {PacientesComponent} from './components/pacientes/pacientes.component';
 import {PacienteComponent} from './components/pacientes/paciente.component';
 import {HematologiasComponent} from './components/hematologias/hematologias.component';
 import {HematologiaComponent} from './components/hematologias/hematologia.component';
+import {InmunologiasComponent} from './components/inmunologias/inmunologias.component';
+import {InmunologiaComponent} from './components/inmunologias/inmunologia.component';
 
 import { AuthGuardService } from './services/auth-guard.service';
 
@@ -47,6 +49,16 @@ const APP_ROUTES: Routes = [
            component: HematologiaComponent,
            canActivate: [ AuthGuardService ]
           },
+          {
+            path: 'inmunologias/:id',
+            component: InmunologiasComponent,
+            canActivate: [ AuthGuardService ]
+           },
+           {
+             path: 'inmunologia/:id',
+             component: InmunologiaComponent,
+             canActivate: [ AuthGuardService ]
+            },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 

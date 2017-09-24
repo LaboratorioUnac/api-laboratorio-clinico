@@ -21,12 +21,15 @@ import { AuthService }  from "./services/auth.service";
 import { AuthGuardService } from './services/auth-guard.service';
 import { PacientesService } from './services/pacientes.service';
 import { HematologiasService } from './services/hematologias.service';
+import { InmunologiasService } from './services/inmunologias.service';
 
 //pipes
 import { KeysPipe } from './pipes/keys.pipe';
 import { PdfComponent } from './components/pdf/pdf.component';
 import { HematologiasComponent } from './components/hematologias/hematologias.component';
 import { HematologiaComponent } from './components/hematologias/hematologia.component';
+import { InmunologiasComponent } from './components/inmunologias/inmunologias.component';
+import { InmunologiaComponent } from './components/inmunologias/inmunologia.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +47,8 @@ import { HematologiaComponent } from './components/hematologias/hematologia.comp
     PdfComponent,
     HematologiasComponent,
     HematologiaComponent,
+    InmunologiasComponent,
+    InmunologiaComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +60,8 @@ import { HematologiaComponent } from './components/hematologias/hematologia.comp
     AuthService,
     AuthGuardService,
     PacientesService,
-    HematologiasService
+    HematologiasService,
+    InmunologiasService
   ],
   bootstrap: [AppComponent]
 })

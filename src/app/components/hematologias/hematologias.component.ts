@@ -22,7 +22,7 @@ export class HematologiasComponent implements OnInit {
   ngOnInit() {
   }
 
-  borrarPaciente(key$:string){
+  borrarHematologia(key$:string){
       this._hematologiasService.borrarHematologia(key$)
                 .subscribe( respuesta =>{
                     if( respuesta ){

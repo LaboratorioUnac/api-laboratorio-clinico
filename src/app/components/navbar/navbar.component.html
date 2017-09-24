@@ -18,6 +18,19 @@
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['menu']" routerLinkActive = "active" *ngIf="auth.isAuthenticated()">Menu</a>
       </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"
+        routerLinkActive = "active" *ngIf="auth.isAuthenticated()">Examenes</a>
+        <div class="dropdown-menu">
+          <li role="presentation" class="dropdown-header">Hematologia</li>
+          <a class="dropdown-item" [routerLink]="['/hematologias','informes']">Informes</a>
+          <a class="dropdown-item" [routerLink]="['/hematologia','nuevo']">Nuevo Informe</a>
+          <div class="dropdown-divider"></div>
+          <li role="presentation" class="dropdown-header">Inmunologia</li>
+          <a class="dropdown-item" [routerLink]="['/inmunologias','informes']">Informes</a>
+          <a class="dropdown-item" [routerLink]="['/inmunologia','nuevo']">Nuevo Informe</a>
+        </div>
+      </li>
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['pacientes']" routerLinkActive = "active" *ngIf="auth.isAuthenticated()">Pacientes</a>
       </li>

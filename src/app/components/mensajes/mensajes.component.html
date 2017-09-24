@@ -1,0 +1,48 @@
+<h1>Mensajes</h1>
+<hr>
+
+<div class="row animated fadeIn fast">
+    <div class="col-md-12">
+      <div class="table-responsive">
+          <table class="table">
+            <thead class="thead-inverse">
+              <tr>
+                <th>#</th>
+                <th>Usuario</th>
+                <th>Asunto</th>
+                <th>E-mail</th>
+                <th>Mensaje</th>
+                <th class="text-center">Opciones</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let key of mensajes | keys; let i = index">
+                  <th>{{ i + 1 }}</th>
+                  <td>{{ mensajes[key].nombre }}</td>
+                  <td>{{ mensajes[key].asunto }}</td>
+                  <td>{{ mensajes[key].mail }}</td>
+                  <td>{{ mensajes[key].informacion }}</td>
+                  <td class="text-right w230">
+                      <button (click) = "borrarMensaje(key)"
+                              [routerLink]="['/mensajes']"
+                              type="button" class="btn btn-outline-danger">
+                          Eliminar
+                      </button>
+                  </td>
+                </tr>
+            </tbody>
+          </table>
+
+          <div  *ngIf="(mensajes | keys).length === 0 && !loading"
+                class="alert alert-info" role="alert">
+              <strong>No hay</strong> mensajes para mostrar
+          </div>
+
+          <div *ngIf="loading"
+                class="alert alert-warning" role="alert">
+            <strong>Cargando...</strong> por favor espere
+          </div>
+
+      </div>
+    </div>
+</div>

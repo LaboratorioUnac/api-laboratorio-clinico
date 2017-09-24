@@ -1,3 +1,70 @@
-<p>
-  contact works!
-</p>
+<div  *ngIf="ingresado"
+      class="alert alert-info alert-dismissable">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>¡Mensaje enviado con exito!</strong>
+</div>
+
+<h2 class="text-center"><strong>IPS UNIVERSITARIA ADVENTISTA</strong></h2>
+  <ul class="list-unstyled text-center">
+    <li><em>"Comprometidos con jesucristo en su ministerio sanador"</em></li>
+    <li><em>Cra. 84 No. 33AA - 159 PBX: 250 64 88</em></li>
+    <li><em>Toma de muestras de laboratorio 6:30 a las 9:30 a.m.</em></li>
+  </ul>
+
+<div class="row animated fadeIn fast">
+  <div class="col-md-12">
+
+  <form (ngSubmit)="guardar()" #forma="ngForm">
+          <div class="form-group">
+                <label>Nombre de usuario</label>
+                <input  [(ngModel)]="mensaje.nombre"
+                        name="nombre"
+                        type="text"
+                        class="form-control"
+                        required>
+          </div>
+          <div class="form-group">
+                <label>Asunto</label>
+                <input  [(ngModel)]="mensaje.asunto"
+                        name="asunto"
+                        type="text"
+                        class="form-control"
+                        required>
+          </div>
+          <div class="form-group">
+                <label>E-mail</label>
+                <input  [(ngModel)]="mensaje.mail"
+                        name="mail"
+                        type="email"
+                        class="form-control"
+                        required>
+          </div>
+          <div class="form-group">
+                <label>Mensaje</label>
+                <textarea [(ngModel)]="mensaje.informacion"
+                          name="informacion"
+                          rows="3"
+                          cols="80"
+                          class="form-control"
+                          required></textarea>
+          </div>
+        <dl class="row">
+            <dt class="col-sm-12 text-center">
+                  <em class="text-center"><strong>"Hijo mío, no te olvides de mi ley, Y tu corazón guarde mis mandamientos; porque largura de dias
+                    y años de vida y paz te aumentarán"</strong></em>
+                    <p><em class="text-center"><strong>Proverbios 3: 1-2</strong></em></p>
+            </dt>
+        </dl>
+      <div  *ngIf="!ingresado">
+        <dl class="row">
+            <dt class="col-sm-12 text-center">
+              <button   [disabled]="!forma.valid"
+                        type="submit" class="btn btn-outline-success">
+                Enviar Mensaje
+              </button>
+            </dt>
+        </dl>
+      </div>
+    </form>
+  </div>
+</div>

@@ -11,8 +11,6 @@ import { HomeComponent } from './components/home/home.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { LaboratorioComponent } from './components/laboratorio/laboratorio.component';
 import { HeaderTopComponent } from './components/header-top/header-top.component';
-import { MenuComponent } from './components/menu/menu.component';
-import { PerfilComponent } from './components/perfil/perfil.component';
 import { PacientesComponent } from './components/pacientes/pacientes.component';
 import { PacienteComponent } from './components/pacientes/paciente.component';
 
@@ -22,14 +20,15 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { PacientesService } from './services/pacientes.service';
 import { HematologiasService } from './services/hematologias.service';
 import { InmunologiasService } from './services/inmunologias.service';
+import { MensajesService } from './services/mensajes.service';
 
 //pipes
 import { KeysPipe } from './pipes/keys.pipe';
-import { PdfComponent } from './components/pdf/pdf.component';
 import { HematologiasComponent } from './components/hematologias/hematologias.component';
 import { HematologiaComponent } from './components/hematologias/hematologia.component';
 import { InmunologiasComponent } from './components/inmunologias/inmunologias.component';
 import { InmunologiaComponent } from './components/inmunologias/inmunologia.component';
+import { MensajesComponent } from './components/mensajes/mensajes.component';
 
 @NgModule({
   declarations: [
@@ -39,16 +38,14 @@ import { InmunologiaComponent } from './components/inmunologias/inmunologia.comp
     ContactComponent,
     LaboratorioComponent,
     HeaderTopComponent,
-    MenuComponent,
-    PerfilComponent,
     PacientesComponent,
     PacienteComponent,
     KeysPipe,
-    PdfComponent,
     HematologiasComponent,
     HematologiaComponent,
     InmunologiasComponent,
     InmunologiaComponent,
+    MensajesComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,7 +58,8 @@ import { InmunologiaComponent } from './components/inmunologias/inmunologia.comp
     AuthGuardService,
     PacientesService,
     HematologiasService,
-    InmunologiasService
+    InmunologiasService,
+    MensajesService
   ],
   bootstrap: [AppComponent]
 })

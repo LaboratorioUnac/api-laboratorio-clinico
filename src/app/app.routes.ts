@@ -4,14 +4,13 @@ import { RouterModule, Routes } from '@angular/router';
 import {ContactComponent} from './components/contact/contact.component';
 import {HomeComponent} from './components/home/home.component';
 import {LaboratorioComponent} from './components/laboratorio/laboratorio.component';
-import {MenuComponent} from './components/menu/menu.component';
-import {PerfilComponent} from './components/perfil/perfil.component';
 import {PacientesComponent} from './components/pacientes/pacientes.component';
 import {PacienteComponent} from './components/pacientes/paciente.component';
 import {HematologiasComponent} from './components/hematologias/hematologias.component';
 import {HematologiaComponent} from './components/hematologias/hematologia.component';
 import {InmunologiasComponent} from './components/inmunologias/inmunologias.component';
 import {InmunologiaComponent} from './components/inmunologias/inmunologia.component';
+import {MensajesComponent} from './components/mensajes/mensajes.component';
 
 import { AuthGuardService } from './services/auth-guard.service';
 
@@ -19,16 +18,6 @@ const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'laboratorio', component: LaboratorioComponent },
   { path: 'contact', component: ContactComponent },
-  {
-    path: 'menu',
-    component: MenuComponent,
-    canActivate: [ AuthGuardService ]
-   },
-   {
-     path: 'perfil',
-     component: PerfilComponent,
-     canActivate: [ AuthGuardService ]
-    },
       {
         path: 'pacientes',
         component: PacientesComponent,
@@ -59,6 +48,11 @@ const APP_ROUTES: Routes = [
              component: InmunologiaComponent,
              canActivate: [ AuthGuardService ]
             },
+            {
+              path: 'mensajes',
+              component: MensajesComponent,
+              canActivate: [ AuthGuardService ]
+             },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 

@@ -1,52 +1,57 @@
-<app-header-top></app-header-top>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand font-weight-bold">IPS Universitaria Adventista</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['home']" routerLinkActive = "active" *ngIf="!auth.isAuthenticated()">Inicio</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['laboratorio']" routerLinkActive = "active" *ngIf="!auth.isAuthenticated()">Laboratorio</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['contact']" routerLinkActive = "active" *ngIf="!auth.isAuthenticated()">Contacto</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['menu']" routerLinkActive = "active" *ngIf="auth.isAuthenticated()">Menu</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"
-        routerLinkActive = "active" *ngIf="auth.isAuthenticated()">Examenes</a>
-        <div class="dropdown-menu">
-          <li role="presentation" class="dropdown-header">Hematologia</li>
-          <a class="dropdown-item" [routerLink]="['/hematologias','informes']">Informes</a>
-          <a class="dropdown-item" [routerLink]="['/hematologia','nuevo']">Nuevo Informe</a>
-          <div class="dropdown-divider"></div>
-          <li role="presentation" class="dropdown-header">Inmunologia</li>
-          <a class="dropdown-item" [routerLink]="['/inmunologias','informes']">Informes</a>
-          <a class="dropdown-item" [routerLink]="['/inmunologia','nuevo']">Nuevo Informe</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['pacientes']" routerLinkActive = "active" *ngIf="auth.isAuthenticated()">Pacientes</a>
-      </li>
-    </ul>
+<header class="sticky-top">
+  <app-header-top></app-header-top>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand font-weight-bold">IPS Universitaria Adventista</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['home']" routerLinkActive = "active" *ngIf="!auth.isAuthenticated()">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['laboratorio']" routerLinkActive = "active" *ngIf="!auth.isAuthenticated()">Laboratorio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['contact']" routerLinkActive = "active" *ngIf="!auth.isAuthenticated()">Contactenos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['laboratorio']" routerLinkActive = "active" *ngIf="auth.isAuthenticated()">Laboratorio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['mensajes']" routerLinkActive = "active" *ngIf="auth.isAuthenticated()">Mensajes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['pacientes']" routerLinkActive = "active" *ngIf="auth.isAuthenticated()">Pacientes</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"
+          routerLinkActive = "active" *ngIf="auth.isAuthenticated()">Examenes</a>
+          <div class="dropdown-menu">
+            <li role="presentation" class="dropdown-header">Hematologia</li>
+            <a class="dropdown-item" [routerLink]="['/hematologias','informes']">Informes</a>
+            <a class="dropdown-item" [routerLink]="['/hematologia','nuevo']">Nuevo Informe</a>
+            <div class="dropdown-divider"></div>
+            <li role="presentation" class="dropdown-header">Inmunologia</li>
+            <a class="dropdown-item" [routerLink]="['/inmunologias','informes']">Informes</a>
+            <a class="dropdown-item" [routerLink]="['/inmunologia','nuevo']">Nuevo Informe</a>
+          </div>
+        </li>
+      </ul>
 
 
-    <span class="navbar-text">
-      <button (click) = "ingresar()"
-              *ngIf="!auth.isAuthenticated()"
-              type="button"
-              class="btn btn-outline-primary btn-sm">ingresar</button>
-      <button (click) = "salir()"
-              *ngIf="auth.isAuthenticated()"
-              type="button"
-              class="btn btn-outline-primary btn-sm">Salir</button>
-    </span>
+      <span class="navbar-text">
+        <button (click) = "ingresar()"
+                *ngIf="!auth.isAuthenticated()"
+                type="button"
+                class="btn btn-outline-primary btn-sm">ingresar</button>
+        <button (click) = "salir()"
+                *ngIf="auth.isAuthenticated()"
+                type="button"
+                class="btn btn-outline-primary btn-sm">Salir</button>
+      </span>
 
-  </div>
-</nav>
+    </div>
+  </nav>
+</header>

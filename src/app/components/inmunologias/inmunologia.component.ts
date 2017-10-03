@@ -39,8 +39,8 @@ export class InmunologiaComponent implements OnInit {
 
   nuevo:boolean = false;
   id:string;
-  actualizado:boolean = false;
-  ingresado:boolean = false;
+  actualizando:boolean = false;
+  ingresando:boolean = false;
 
     constructor(private _inmunologiasService:InmunologiasService,
                 private router: Router,
@@ -50,7 +50,7 @@ export class InmunologiaComponent implements OnInit {
           this.id = parametros['id']
           if( this.id !== "nuevo" ){
             this._inmunologiasService.obtenerInmunologia(this.id)
-                  .subscribe ( hematologia => this.inmunologia = hematologia)
+                  .subscribe ( inmunologia => this.inmunologia = inmunologia)
           }
         });
      }
@@ -63,7 +63,7 @@ export class InmunologiaComponent implements OnInit {
 
       if( this.id == "nuevo" ){
         //insertando
-        this.ingresado = true;
+        this.ingresando = true;
         this._inmunologiasService.nuevaInmunologia( this.inmunologia )
               .subscribe( data => {
                   this.router.navigate(['/inmunologia',data.name])
@@ -71,7 +71,7 @@ export class InmunologiaComponent implements OnInit {
             error => console.error(error));
       }else{
         //actualizando
-        this.actualizado = true;
+        this.actualizando = true;
         this._inmunologiasService.actualizarInmunologia( this.inmunologia,this.id )
               .subscribe( data => {
                   console.log(data);

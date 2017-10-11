@@ -47,6 +47,27 @@
               placeholder="Numero de documento">
       </dd>
       <dt class="col-xs-1">
+        <h5><strong><em>Sexo: </em></strong></h5>
+      </dt>
+      <dd class="col-sm-2">
+        <li class="list-inline-item">
+          <select   [(ngModel)]="hematologia.sexo"
+                    class="form-control" name="sexo">
+            <option value="Positivo">Masculino</option>
+            <option value="Negativo">Femenino</option>
+          </select>
+        </li>
+      </dd>
+      <dt class="col-xs-1">
+        <h5><strong><em>Edad: </em></strong></h5>
+      </dt>
+      <dd class="col-sm-1">
+        <input  [(ngModel)]="hematologia.edad"
+              name="edad"
+              type="number"
+              class="form-control">
+      </dd>
+      <dt class="col-xs-1">
         <h5><strong><em>Telefono: </em></strong></h5>
       </dt>
       <dd class="col-sm-3">
@@ -57,8 +78,6 @@
               placeholder="Numero de telefono"
               required>
       </dd>
-      <dd class="col-sm-4"></dd>
-
       <dt class="col-xs-1">
         <h5><strong><em>Codigo: </em></strong></h5>
       </dt>
@@ -70,8 +89,6 @@
               placeholder="Codigo"
               required>
       </dd>
-      <dd class="col-sm-9"></dd>
-
       <dt class="col-xs-2">
         <h5><strong><em>Fecha de atención: </em></strong></h5>
       </dt>

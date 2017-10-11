@@ -14,6 +14,8 @@ export class HematologiaComponent implements OnInit {
 hematologia:Hematologia = {
   nombre:"",
   documento:null,
+  sexo:"",
+  edad:null,
   telefono:null,
   codigo:null,
   atencion:"",

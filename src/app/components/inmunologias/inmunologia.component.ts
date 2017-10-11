@@ -14,6 +14,8 @@ export class InmunologiaComponent implements OnInit {
   inmunologia:Inmunologia = {
     nombre:"",
     documento:null,
+    sexo:"",
+    edad:null,
     telefono:null,
     codigo:null,
     atencion:"",

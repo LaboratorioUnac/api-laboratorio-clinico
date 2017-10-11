@@ -2,6 +2,8 @@
 export interface Hematologia{
   nombre:string;
   documento:number;
+  sexo:string;
+  edad:number;
   telefono:number;
   codigo:number;
   atencion:string;

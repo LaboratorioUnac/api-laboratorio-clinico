@@ -24,5 +24,7 @@ export interface Inmunologia{
   rh:string;
   proteinac2:string;
   tecnica:string;
+  sexo:string;
+  edad:number;
   key$?:string;
 }

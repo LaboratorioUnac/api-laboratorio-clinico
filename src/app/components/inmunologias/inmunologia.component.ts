@@ -35,6 +35,7 @@ export class InmunologiaComponent implements OnInit {
     grupo:"",
     rh:"",
     proteinac2:"",
+    tecnica:"",
   }
 
   nuevo:boolean = false;

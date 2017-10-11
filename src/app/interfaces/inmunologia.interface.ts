@@ -23,5 +23,6 @@ export interface Inmunologia{
   grupo:string;
   rh:string;
   proteinac2:string;
+  tecnica:string;
   key$?:string;
 }
